@@ -22,7 +22,7 @@ const feedbackImages = [
 const logoUrl = require("./assets/logo.jpeg");
 
 const LandingPage = () => {
-  const [seconds, setSeconds] = useState(2000); // 20 sec timer, adjust as needed
+  const [seconds, setSeconds] = useState(20); // 20 sec timer, adjust as needed
   const [startIndex, setStartIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
 
