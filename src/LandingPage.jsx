@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./LandingPage.css";
 
 const feedbackImages = [
@@ -21,10 +21,13 @@ const feedbackImages = [
 
 const logoUrl = require("./assets/logo.jpeg");
 
+const AUTO_SLIDE_INTERVAL = 1500; // 1.5 seconds
+
 const LandingPage = () => {
-  const [seconds, setSeconds] = useState(20); // 20 sec timer, adjust as needed
+  const [seconds, setSeconds] = useState(2000); // 20 sec timer, adjust as needed
   const [startIndex, setStartIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
+  const autoSlideRef = useRef();
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 600);
@@ -34,7 +37,7 @@ const LandingPage = () => {
 
   useEffect(() => {
     if (seconds === 0) {
-      window.location.href = "https://t.me/+Y2Cl4_sMur0xYjRl";
+      window.location.href = "https://t.me/+esb2J2_tds00Yzg1";
     }
     const timer = setInterval(() => {
       setSeconds((sec) => (sec > 0 ? sec - 1 : 0));
@@ -59,6 +62,15 @@ const LandingPage = () => {
     }
   }
 
+  // Auto-slide effect
+  useEffect(() => {
+    autoSlideRef.current && clearInterval(autoSlideRef.current);
+    autoSlideRef.current = setInterval(() => {
+      setStartIndex((prev) => (prev + (isMobile ? 1 : 3)) % feedbackImages.length);
+    }, AUTO_SLIDE_INTERVAL);
+    return () => clearInterval(autoSlideRef.current);
+  }, [isMobile]);
+
   return (
     <div className="landing-root">
       <div className="logo-box">
@@ -71,7 +83,7 @@ const LandingPage = () => {
           <span>Hurry Up!</span>
           <div className="timer">00:00:{seconds.toString().padStart(2, "0")}</div>
         </div>
-        <a href="https://t.me/+Y2Cl4_sMur0xYjRl" target="_blank" rel="noopener noreferrer" className="join-btn">
+        <a href="https://t.me/+esb2J2_tds00Yzg1" target="_blank" rel="noopener noreferrer" className="join-btn">
           <span className="telegram-icon" aria-label="Telegram">
             {/* White Telegram SVG icon */}
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -90,13 +102,18 @@ const LandingPage = () => {
             <button className="carousel-arrow" onClick={showPrev}>&lt;</button>
             <div className="feedback-images">
               {visibleImages.map((img, idx) => (
-                <img src={img} alt={`Feedback ${startIndex + idx + 1}`} key={idx} />
+                <img
+                  src={img}
+                  alt={`Feedback ${startIndex + idx + 1}`}
+                  key={idx}
+                  className={isMobile ? "mobile-feedback-img" : ""}
+                />
               ))}
             </div>
             <button className="carousel-arrow" onClick={showNext}>&gt;</button>
           </div>
         </div>
-        <a href="https://t.me/+Y2Cl4_sMur0xYjRl" target="_blank" rel="noopener noreferrer" className="join-btn">
+        <a href="https://t.me/+esb2J2_tds00Yzg1" target="_blank" rel="noopener noreferrer" className="join-btn">
           <span className="telegram-icon" aria-label="Telegram">
             {/* White Telegram SVG icon */}
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
