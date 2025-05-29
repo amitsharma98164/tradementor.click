@@ -16,7 +16,6 @@ const feedbackImages = [
   require("./assets/img13.jpeg"),
   require("./assets/img14.jpeg"),
   require("./assets/img15.jpeg"),
-  require("./assets/img17.jpeg"),
 ];
 
 const logoUrl = require("./assets/logo.png");
@@ -24,7 +23,7 @@ const logoUrl = require("./assets/logo.png");
 const AUTO_SLIDE_INTERVAL = 1500; // 1.5 seconds
 
 const LandingPage = () => {
-  const [seconds, setSeconds] = useState(20); // 20 sec timer, adjust as needed
+  const [seconds, setSeconds] = useState(2000); // 20 sec timer, adjust as needed
   const [startIndex, setStartIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
   const autoSlideRef = useRef();
@@ -37,7 +36,7 @@ const LandingPage = () => {
 
   useEffect(() => {
     if (seconds === 0) {
-      window.location.href = "https://t.me/+esb2J2_tds00Yzg1";
+      window.location.href = "https://t.me/+FXwFj2mFqRw4NTc1";
     }
     const timer = setInterval(() => {
       setSeconds((sec) => (sec > 0 ? sec - 1 : 0));
@@ -72,18 +71,20 @@ const LandingPage = () => {
   }, [isMobile]);
 
   return (
+    
     <div className="landing-root">
+      <div className="background-overlay"></div>
       <div className="logo-box">
         <img src={logoUrl} alt="ACE Logo" className="logo-img" />
       </div>
       <div className="main-content">
-        <h3><span className="highlight">🚀 Maximise your Profits <span role="img" aria-label="money">💰</span></span></h3>
-        <p>with<br /><span className="brand">⚡ Mina_talwar ⚡</span></p>
+        <h3><span className="highlight">🚀 High Quality Trading Signals For Free Of Cost <span role="img" aria-label="money">💰</span></span></h3>
+        <p>with<br /><span className="brand">⚡ Aura Capital ⚡</span></p>
         <div className="timer-box">
           <span>Hurry Up!</span>
           <div className="timer">00:00:{seconds.toString().padStart(2, "0")}</div>
         </div>
-        <a href="https://t.me/+esb2J2_tds00Yzg1" target="_blank" rel="noopener noreferrer" className="join-btn">
+        <a href="https://t.me/+FXwFj2mFqRw4NTc1" target="_blank" rel="noopener noreferrer" className="join-btn">
           <span className="telegram-icon" aria-label="Telegram">
             {/* White Telegram SVG icon */}
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -113,7 +114,7 @@ const LandingPage = () => {
             <button className="carousel-arrow" onClick={showNext}>&gt;</button>
           </div>
         </div>
-        <a href="https://t.me/+esb2J2_tds00Yzg1" target="_blank" rel="noopener noreferrer" className="join-btn">
+        <a href="https://t.me/+FXwFj2mFqRw4NTc1" target="_blank" rel="noopener noreferrer" className="join-btn">
           <span className="telegram-icon" aria-label="Telegram">
             {/* White Telegram SVG icon */}
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
