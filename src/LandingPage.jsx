@@ -19,9 +19,9 @@ const feedbackImages = [
   require("./assets/img17.jpeg"),
 ];
 
-const logoUrl = require("./assets/logo.png");
+const logoUrl = require("./assets/logo.jpeg");
 
-const AUTO_SLIDE_INTERVAL = 150000; // 1.5 seconds
+const AUTO_SLIDE_INTERVAL = 1500; // 1.5 seconds
 
 const LandingPage = () => {
   const [seconds, setSeconds] = useState(20); // 20 sec timer, adjust as needed
