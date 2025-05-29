@@ -23,7 +23,7 @@ const logoUrl = require("./assets/logo.png");
 const AUTO_SLIDE_INTERVAL = 1500; // 1.5 seconds
 
 const LandingPage = () => {
-  const [seconds, setSeconds] = useState(2000); // 20 sec timer, adjust as needed
+  const [seconds, setSeconds] = useState(20); // 20 sec timer, adjust as needed
   const [startIndex, setStartIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
   const autoSlideRef = useRef();
