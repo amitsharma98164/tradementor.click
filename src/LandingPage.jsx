@@ -19,7 +19,7 @@ const feedbackImages = [
   require("./assets/img17.jpeg"),
 ];
 
-const logoUrl = require("./assets/logo.jpeg");
+const logoUrl = require("./assets/logo.png");
 
 const AUTO_SLIDE_INTERVAL = 1500; // 1.5 seconds
 
