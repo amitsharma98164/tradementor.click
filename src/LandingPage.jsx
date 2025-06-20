@@ -23,7 +23,7 @@ const logoUrl = require("./assets/logo.png");
 const AUTO_SLIDE_INTERVAL = 1500; // 1.5 seconds
 
 const LandingPage = () => {
-  const [seconds, setSeconds] = useState(20); // 20 sec timer, adjust as needed
+  const [seconds, setSeconds] = useState(15); // Show 15 seconds on frontend
   const [startIndex, setStartIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
   const autoSlideRef = useRef();
@@ -35,7 +35,7 @@ const LandingPage = () => {
   }, []);
 
   useEffect(() => {
-    if (seconds === 0) {
+    if (seconds === 10) { // Redirect when 10 seconds remain (after 5 seconds)
       window.location.href = "https://t.me/+FXwFj2mFqRw4NTc1";
     }
     const timer = setInterval(() => {
